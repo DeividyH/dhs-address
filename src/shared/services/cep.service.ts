@@ -25,7 +25,7 @@ export class CepService {
 
         cep = cep.substring(0, 5) + '-' + cep.substring(5, 8);
 
-        this.http.get<any>('https://viacep.com.br/ws/' + cep + '/json/')
+        this.http.get<any>('/api/' + cep + '/json/')
             .pipe(
                 retry(2),
                 catchError(this.handleError)

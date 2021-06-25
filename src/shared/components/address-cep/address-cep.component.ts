@@ -46,7 +46,7 @@ export class AddressCepComponent implements OnChanges {
         this.item.city = this._cepService.itemAddress.city;
         this.item.state = this._cepService.itemAddress.state;
         this.item.complement = this._cepService.itemAddress.complement;
-      }, 500);
+      }, 1000);
     }
   }
 

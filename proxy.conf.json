@@ -1,0 +1,11 @@
+{
+    "/api/*": {
+        "target": "https://viacep.com.br/ws",
+        "secure": true,
+        "changeOrigin": "true",
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/api": ""
+        }
+    }
+}

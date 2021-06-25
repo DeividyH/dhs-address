@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
 import { CreateOrEditAddressComponent } from './create-or-edit-address/create-or-edit-address.component';
 
 @Component({
@@ -12,7 +13,8 @@ export class AddressComponent implements OnInit {
   listAddress: any[] = [];
 
   constructor(
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -29,8 +31,11 @@ export class AddressComponent implements OnInit {
   protected delete(item: any): void {
     const index = this.listAddress.findIndex(x => x.id == item.id);
 
-    if (index > -1)
+    if (index > -1) {
       this.listAddress.splice(index, 1);
+
+      this.toastr.success('Register deleted success');
+    }
   }
 
   private showCreateOrEdidModal(id?: number, isView: boolean = false): void {

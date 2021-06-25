@@ -1,0 +1,14 @@
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item" style="align-self: center;">
+        <span style="color: white;">{{currentUser.userName}}</span>
+    </li>
+    <li class="nav-item dropdown">
+        <div class="dropdown">
+            <input class="dropdown-toggle d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" data-bs-toggle="dropdown"
+                type="image" src="/assets/images/user.png" width="38" height="38" style="border-radius: 50%;">
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </li>
+</ul>

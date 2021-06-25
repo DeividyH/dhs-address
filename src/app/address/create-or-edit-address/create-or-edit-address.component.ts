@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-or-edit-address',
@@ -27,7 +28,8 @@ export class CreateOrEditAddressComponent implements OnInit {
   @Output() onSave = new EventEmitter<any>();
 
   constructor(
-    public bsModalRef: BsModalRef
+    public bsModalRef: BsModalRef,
+    private toastr: ToastrService
   ) {
   }
   ngOnInit(): void {
@@ -65,6 +67,8 @@ export class CreateOrEditAddressComponent implements OnInit {
 
     this.bsModalRef.hide();
     this.onSave.emit(this.items);
+
+    this.toastr.success('Register save success')
   }
 
   create(): void {
