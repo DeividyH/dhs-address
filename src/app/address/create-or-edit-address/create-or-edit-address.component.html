@@ -1,0 +1,22 @@
+<form class="form-horizontal" autocomplete="off" #createOrEdit="ngForm">
+    <div class="modal-header">
+        <h4 *ngIf="id == 0" class="modal-title pull-left">Create Address</h4>
+        <h4 *ngIf="id > 0 && !isView" class="modal-title pull-left">Edit Address</h4>
+        <h4 *ngIf="id > 0 && isView" class="modal-title pull-left">View Address</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <app-address-cep #address [item]="itemAddress" required="false" [disabled]="isView"></app-address-cep>
+
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Basic example" style="display: flex;">
+        <button type="button" class="btn btn-danger" style="margin: 10px;" (click)="bsModalRef.hide()">Cancel</button>
+
+        <button *ngIf="!isView" type="button" class="btn btn-primary" style="margin: 10px;" (click)="save()"
+            [disabled]="!validate() || saving">Save</button>
+    </div>
+</form>

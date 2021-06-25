@@ -1,0 +1,40 @@
+<section class="content" style="margin-top: 10px;">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="row card-header">
+                <div class="col-6">
+                    <h5>Address List</h5>
+                </div>
+                <div class="col-6" style="text-align: right;">
+                    <button class="button-adjust" type="button" (click)="create()"><i
+                            class="fa fa-plus-square"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="col-sm-1">Id</th>
+                                <th class="col-md-9">Address</th>
+                                <th class="col-md-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="
+                            let item of listAddress">
+                                <td>{{ item.id }}</td>
+                                <td>{{ concatField(item) }}</td>
+                                <td align="center">
+                                    <button class="button-adjust" type="button"><i class="fas fa-edit" (click)="edit(item)"></i></button>
+                                    <button class="button-adjust" type="button"><i class="fas fa-eye" (click)="edit(item, true)"></i></button>
+                                    <button class="button-adjust" type="button"><i class="fas fa-trash" (click)="delete(item)"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
