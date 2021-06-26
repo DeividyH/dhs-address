@@ -6,12 +6,13 @@ Node Version 6.14.6
 ## Simulation Facke-Api-Back-end
 This project simulation fake-backend-service call api to authentication login.
 
-## Reuqest Http Api ViaCep
+## Request Http Api ViaCep
 This project has a simple address CRUD examples.
 
 ## Development server
 
 Before run at the root of the project.
+Run `npm install`
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
